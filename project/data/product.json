@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Перфоратор Bosch GBH 2-26",
+        "category": "Електроінструменти",
+        "manufacturer": "Bosch",
+        "price": 5200,
+        "image": "images/perforator.jpg",
+        "description": "Потужний перфоратор для свердління бетону та цегли."
+    },
+    {
+        "id": 2,
+        "name": "Шуруповерт Makita DF457DWE",
+        "category": "Електроінструменти",
+        "manufacturer": "Makita",
+        "price": 4300,
+        "image": "images/shurupovert.jpg",
+        "description": "Акумуляторний шуруповерт для монтажних робіт."
+    },
+    {
+        "id": 3,
+        "name": "Молоток Stanley",
+        "category": "Ручні інструменти",
+        "manufacturer": "Stanley",
+        "price": 450,
+        "image": "images/hammer.jpg",
+        "description": "Зручний молоток для будівельних та ремонтних робіт."
+    },
+    {
+        "id": 4,
+        "name": "Рулетка 5 м Tolsen",
+        "category": "Вимірювальні інструменти",
+        "manufacturer": "Tolsen",
+        "price": 180,
+        "image": "images/ruletka.jpg",
+        "description": "Надійна рулетка для точних вимірювань."
+    },
+    {
+        "id": 5,
+        "name": "Болгарка DeWalt DWE4057",
+        "category": "Електроінструменти",
+        "manufacturer": "DeWalt",
+        "price": 3100,
+        "image": "images/bolgarka.jpg",
+        "description": "Кутова шліфувальна машина для різання та шліфування."
+    },
+    {
+        "id": 6,
+        "name": "Набір викруток Intertool",
+        "category": "Ручні інструменти",
+        "manufacturer": "Intertool",
+        "price": 620,
+        "image": "images/vykrutky.jpg",
+        "description": "Універсальний набір викруток для домашнього використання."
+    }
+]

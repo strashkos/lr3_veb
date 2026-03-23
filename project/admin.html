@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адмін-панель</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Адмін-панель магазину</h1>
+        <a href="index.html" class="back-link">← На головну</a>
+
+        <section id="loginSection" class="box">
+            <h2>Вхід адміністратора</h2>
+            <input type="text" id="adminLogin" placeholder="Логін">
+            <input type="password" id="adminPassword" placeholder="Пароль">
+            <button id="loginBtn">Увійти</button>
+            <p id="loginMessage"></p>
+        </section>
+
+        <section id="adminSection" class="box hidden">
+            <div class="admin-top">
+                <h2>Керування товарами</h2>
+                <button onclick="logoutAdmin()">Вийти</button>
+            </div>
+
+            <form id="productForm">
+                <input type="hidden" id="productId">
+
+                <input type="text" id="productName" placeholder="Назва інструменту" required>
+                <input type="text" id="productCategory" placeholder="Категорія" required>
+                <input type="text" id="productManufacturer" placeholder="Виробник" required>
+                <input type="number" id="productPrice" placeholder="Ціна" required>
+                <input type="text" id="productImage" placeholder="Шлях до зображення (images/...)" required>
+                <textarea id="productDescription" placeholder="Опис"></textarea>
+
+                <button type="submit">Зберегти товар</button>
+            </form>
+
+            <h3>Список товарів</h3>
+            <div id="adminProductsList"></div>
+        </section>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

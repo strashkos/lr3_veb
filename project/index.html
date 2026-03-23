@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин будівельних інструментів</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Магазин інструментів для будівництва</h1>
+            <p>Якісні інструменти для дому та професіоналів</p>
+
+            <div class="top-buttons">
+                <button onclick="showInfo()">Про магазин</button>
+                <a href="admin.html" class="admin-link">Адмін-панель</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="filters">
+            <h2>Пошук і фільтрація</h2>
+
+            <div class="filters-row">
+                <input type="text" id="searchInput" placeholder="Пошук за назвою або виробником">
+
+                <select id="categorySelect">
+                    <option value="all">Усі категорії</option>
+                </select>
+
+                <button id="resetBtn">Скинути</button>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="products-section">
+                <h2>Список інструментів</h2>
+                <div id="productsList" class="products-list"></div>
+            </div>
+
+            <aside class="cart-section">
+                <h2>Корзина</h2>
+                <div id="cartList"></div>
+                <p class="total">Загальна сума: <span id="cartTotal">0</span> грн</p>
+
+                <h3>Оформлення замовлення</h3>
+                <form id="orderForm">
+                    <input type="text" id="customerName" placeholder="Ваше ім'я">
+                    <input type="text" id="customerPhone" placeholder="Ваш телефон">
+                    <button type="submit">Оформити замовлення</button>
+                </form>
+
+                <div id="receipt" class="receipt"></div>
+            </aside>
+        </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

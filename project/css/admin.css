@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    color: #222;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #2980b9;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#loginSection input,
+#loginSection button,
+#productForm input,
+#productForm textarea,
+#productForm button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#loginSection button,
+#productForm button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.admin-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-top button {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.admin-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #fafafa;
+}
+
+.admin-card button {
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.edit-btn {
+    background: #f39c12;
+}
+
+.delete-btn {
+    background: #c0392b;
+}
