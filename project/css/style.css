@@ -6,8 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #222;
+    background: #eef2f6;
+    color: #2c3e50;
 }
 
 .container {
@@ -16,8 +16,9 @@ body {
     margin: 0 auto;
 }
 
+/* HEADER */
 .header {
-    background: #2c3e50;
+    background: #2f3e4d;
     color: white;
     padding: 30px 0;
     text-align: center;
@@ -27,25 +28,41 @@ body {
     margin-bottom: 10px;
 }
 
+/* КНОПКИ */
 .top-buttons {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .top-buttons button,
 .admin-link {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px 16px;
-    background: #e67e22;
+    width: 180px;
+    height: 45px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #4a6fa5;
     color: white;
     text-decoration: none;
     border: none;
     cursor: pointer;
     border-radius: 6px;
+    transition: 0.3s;
+    font-size: 16px;
 }
 
+.top-buttons button:hover,
+.admin-link:hover {
+    background: #3b5d8a;
+}
+
+/* ФІЛЬТРИ */
 .filters {
-    background: white;
+    background: #3a4756;
+    color: white;
     margin: 20px 0;
     padding: 20px;
     border-radius: 10px;
@@ -66,8 +83,29 @@ body {
 .filters-row button {
     padding: 10px;
     font-size: 16px;
+    border-radius: 6px;
+    border: none;
 }
 
+/* поле вводу */
+.filters-row input,
+.filters-row select {
+    background: #2c3e50;
+    color: white;
+}
+
+/* кнопка */
+.filters-row button {
+    background: #4a6fa5;
+    color: white;
+    cursor: pointer;
+}
+
+.filters-row button:hover {
+    background: #3b5d8a;
+}
+
+/* ОСНОВНИЙ КОНТЕНТ */
 .content {
     display: flex;
     gap: 20px;
@@ -78,15 +116,18 @@ body {
     flex: 2;
 }
 
+/* КОРЗИНА */
 .cart-section {
     flex: 1;
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
     position: sticky;
     top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* ТОВАРИ */
 .products-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -94,10 +135,16 @@ body {
 }
 
 .product-card {
-    background: white;
+    background: #ffffff;
     border-radius: 10px;
     overflow: hidden;
     padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
 }
 
 .product-card img {
@@ -116,22 +163,28 @@ body {
 }
 
 .product-card button {
-    background: #27ae60;
+    background: #4a6fa5;
     color: white;
     border: none;
     padding: 10px 14px;
     cursor: pointer;
     border-radius: 6px;
+    transition: 0.3s;
 }
 
+.product-card button:hover {
+    background: #3b5d8a;
+}
+
+/* КОРЗИНА */
 .cart-item {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
     padding: 10px 0;
 }
 
 .cart-item button {
     margin-top: 5px;
-    background: #c0392b;
+    background: #6c7a89;
     color: white;
     border: none;
     padding: 6px 10px;
@@ -139,34 +192,51 @@ body {
     border-radius: 6px;
 }
 
+.cart-item button:hover {
+    background: #555;
+}
+
 .total {
     font-weight: bold;
     margin: 15px 0;
 }
 
+/* ФОРМА */
 #orderForm input,
+#orderForm select,
 #orderForm button {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+#orderForm input,
+#orderForm select {
+    background: #ecf0f1;
 }
 
 #orderForm button {
-    background: #2980b9;
+    background: #4a6fa5;
     color: white;
-    border: none;
     cursor: pointer;
-    border-radius: 6px;
 }
 
+#orderForm button:hover {
+    background: #3b5d8a;
+}
+
+/* ЧЕК */
 .receipt {
-    background: #ecf0f1;
+    background: #dfe6ec;
     padding: 10px;
     border-radius: 8px;
     margin-top: 15px;
     white-space: pre-line;
 }
 
+/* АДАПТИВ */
 @media screen and (max-width: 900px) {
     .content {
         flex-direction: column;

@@ -54,10 +54,21 @@ function clearCart() {
 function checkout() {
     const name = document.getElementById("customerName").value.trim();
     const phone = document.getElementById("customerPhone").value.trim();
+    const city = document.getElementById("customerCity").value.trim();
+    const post = document.getElementById("postOffice").value;
+    const address = document.getElementById("customerAddress").value.trim();
+    const payment = document.getElementById("paymentType").value;
     const receipt = document.getElementById("receipt");
 
-    if (name === "" || phone === "") {
-        alert("Заповніть ім'я та телефон.");
+    if (
+        name === "" ||
+        phone === "" ||
+        city === "" ||
+        post === "" ||
+        address === "" ||
+        payment === ""
+    ) {
+        alert("Заповніть усі поля форми.");
         return;
     }
 
@@ -68,7 +79,11 @@ function checkout() {
 
     let text = "ЧЕК\n";
     text += "Покупець: " + name + "\n";
-    text += "Телефон: " + phone + "\n\n";
+    text += "Телефон: " + phone + "\n";
+    text += "Місто: " + city + "\n";
+    text += "Пошта: " + post + "\n";
+    text += "Адреса: " + address + "\n";
+    text += "Тип оплати: " + payment + "\n\n";
     text += "Товари:\n";
 
     let total = 0;
