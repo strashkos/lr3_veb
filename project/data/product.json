@@ -52,5 +52,42 @@
         "price": 620,
         "image": "images/vykrutky.jpg",
         "description": "Універсальний набір викруток для домашнього використання."
+    },
+    {
+        "id": 7,
+        "name": "Лобзик Bosch PST 700 E",
+        "category": "Електроінструменти",
+        "manufacturer": "Bosch",
+        "price": 2700,
+        "image": "images/lobzik.jpg",
+        "description": "Лобзик для різання дерева, металу та пластику."
+    },
+    {
+        "id": 8,
+        "name": "Гайковерт Makita TW1000",
+        "category": "Електроінструменти",
+        "manufacturer": "Makita",
+        "price": 4500,
+        "image": "images/gaikover.jpg",
+        "description": "Потужний гайковерт для важких робіт."
+    },
+    {
+        "id": 9,
+        "name": "Рівень лазерний Stanley Cubix",
+        "category": "Вимірювальні інструменти",
+        "manufacturer": "Stanley",
+        "price": 1500,
+        "image": "images/level.jpg",
+        "description": "Лазерний рівень для точного вирівнювання."
+    },
+    {
+        "id": 10,
+        "name": "Пила циркулярна DeWalt DWE575K",
+        "category": "Електроінструменти",
+        "manufacturer": "DeWalt",
+        "price": 3500,
+        "image": "images/circular_saw.jpeg",
+        "description": "Циркулярна пила для швидкого та точного різання."
     }
+
 ]
