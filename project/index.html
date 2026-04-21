@@ -5,74 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин будівельних інструментів</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <header class="header">
-        <div class="container">
-            <h1>Магазин інструментів для будівництва</h1>
-            <p>Якісні інструменти для дому та професіоналів</p>
+<body class="bg-light">
+    <header class="header bg-dark text-white py-4 mb-4">
+        <div class="container text-center">
+            <h1 class="display-6 mb-2">Магазин інструментів для будівництва</h1>
+            <p class="lead mb-0">Якісні інструменти для дому та професіоналів</p>
 
             <div class="top-buttons">
-                <button onclick="showInfo()">Про магазин</button>
-                <a href="admin.html" class="admin-link">Адмін-панель</a>
+                <button class="btn btn-outline-light" onclick="showInfo()">Про магазин</button>
+                <a href="user.html" class="user-link btn btn-warning text-dark">Кабінет користувача</a>
+                <a href="admin.html" class="admin-link btn btn-info text-dark">Адмін-панель</a>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <section class="filters">
-            <h2>Пошук і фільтрація</h2>
+        <section class="filters card shadow-sm text-white bg-secondary">
+            <div class="card-body">
+            <h2 class="h4 mb-3">Пошук і фільтрація</h2>
 
             <div class="filters-row">
-                <input type="text" id="searchInput" placeholder="Пошук за назвою або виробником">
+                <input type="text" id="searchInput" class="form-control" placeholder="Пошук за назвою або виробником">
 
-                <select id="categorySelect">
+                <select id="categorySelect" class="form-select">
                     <option value="all">Усі категорії</option>
                 </select>
 
-                <button id="resetBtn">Скинути</button>
+                <button id="resetBtn" class="btn btn-light">Скинути</button>
+            </div>
+            </div>
+        </section>
+
+        <section class="details-panel card shadow-sm mb-4">
+            <div class="card-body">
+            <h2 class="h4 mb-3">Детальний перегляд</h2>
+            <div id="productDetails" class="product-details">Оберіть товар для перегляду деталей.</div>
             </div>
         </section>
 
         <section class="content">
             <div class="products-section">
-                <h2>Список інструментів</h2>
+                <h2 class="h4 mb-3">Список інструментів</h2>
                 <div id="productsList" class="products-list"></div>
             </div>
 
-            <aside class="cart-section">
-                <h2>Корзина</h2>
+            <aside class="cart-section card shadow-sm">
+                <div class="card-body">
+                <h2 class="h4 mb-3">Корзина</h2>
                 <div id="cartList"></div>
                 <p class="total">Загальна сума: <span id="cartTotal">0</span> грн</p>
 
-                <h3>Оформлення замовлення</h3>
+                <h3 class="h5 mt-4">Оформлення замовлення</h3>
                 <form id="orderForm">
-                    <input type="text" id="customerName" placeholder="Ваше ім'я">
-                    <input type="text" id="customerPhone" placeholder="Ваш телефон">
-                    <input type="text" id="customerCity" placeholder="Ваше місто">
+                    <input type="text" id="customerName" class="form-control" placeholder="Ваше ім'я">
+                    <input type="text" id="customerPhone" class="form-control" placeholder="Ваш телефон">
+                    <input type="text" id="customerCity" class="form-control" placeholder="Ваше місто">
                 
-                    <select id="postOffice">
+                    <select id="postOffice" class="form-select">
                         <option value="">Оберіть пошту</option>
                         <option value="Нова пошта">Нова пошта</option>
                         <option value="Укрпошта">Укрпошта</option>
                         <option value="Meest">Meest</option>
                     </select>
                 
-                    <input type="text" id="customerAddress" placeholder="Адреса відділення або доставки">
+                    <input type="text" id="customerAddress" class="form-control" placeholder="Адреса відділення або доставки">
                 
-                    <select id="paymentType">
+                    <select id="paymentType" class="form-select">
                         <option value="">Оберіть тип оплати</option>
                         <option value="Готівка при отриманні">Готівка при отриманні</option>
                         <option value="Оплата карткою онлайн">Оплата карткою онлайн</option>
                         <option value="Післяплата">Післяплата</option>
                     </select>
                 
-                    <button type="submit">Оформити замовлення</button>
+                    <button type="submit" class="btn btn-primary w-100">Оформити замовлення</button>
                 </form>
 
                 <div id="receipt" class="receipt"></div>
+                </div>
             </aside>
         </section>
     </main>
@@ -80,9 +94,13 @@
     <script src="js/storage.js"></script>
     <script src="js/data.js"></script>
     <script src="js/render.js"></script>
+    <script src="js/auth.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/filters.js"></script>
     <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -4,13 +4,8 @@ function renderCategories() {
 
     categorySelect.innerHTML = '<option value="all">Усі категорії</option>';
 
-    const categories = [];
-
-    for (let i = 0; i < products.length; i++) {
-        if (!categories.includes(products[i].category)) {
-            categories.push(products[i].category);
-        }
-    }
+    const categoriesList = getCategoriesFromStorage();
+    const categories = categoriesList.length > 0 ? categoriesList : collectUniqueCategories(products);
 
     for (let i = 0; i < categories.length; i++) {
         const option = document.createElement("option");
@@ -62,16 +57,100 @@ function renderProducts(list) {
             addToCart(product.id);
         });
 
+        const detailsBtn = document.createElement("button");
+        detailsBtn.textContent = "Детальніше";
+        detailsBtn.addEventListener("click", function () {
+            showProductDetails(product.id);
+        });
+
+        const actions = document.createElement("div");
+        actions.className = "product-actions";
+
+        actions.appendChild(btn);
+        actions.appendChild(detailsBtn);
+
         card.appendChild(img);
         card.appendChild(title);
         card.appendChild(category);
         card.appendChild(manufacturer);
         card.appendChild(price);
         card.appendChild(desc);
-        card.appendChild(btn);
+        card.appendChild(actions);
 
         productsList.appendChild(card);
     }
+
+    const details = document.getElementById("productDetails");
+    if (details) {
+        if (list.length > 0) {
+            showProductDetails(list[0].id);
+        } else {
+            details.innerHTML = "<p>Товари не знайдені.</p>";
+        }
+    }
+}
+
+function showProductDetails(productId) {
+    const details = document.getElementById("productDetails");
+    if (!details) return;
+
+    let selectedProduct = null;
+
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].id === productId) {
+            selectedProduct = products[i];
+            break;
+        }
+    }
+
+    if (!selectedProduct) {
+        details.innerHTML = "<p>Оберіть товар для перегляду деталей.</p>";
+        return;
+    }
+
+    details.innerHTML = "";
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "product-details-card";
+
+    const image = document.createElement("img");
+    image.src = selectedProduct.image;
+    image.alt = selectedProduct.name;
+
+    const info = document.createElement("div");
+    info.className = "product-details-info";
+
+    const title = document.createElement("h3");
+    title.textContent = selectedProduct.name;
+
+    const category = document.createElement("p");
+    category.textContent = "Категорія: " + selectedProduct.category;
+
+    const manufacturer = document.createElement("p");
+    manufacturer.textContent = "Виробник: " + selectedProduct.manufacturer;
+
+    const price = document.createElement("p");
+    price.textContent = "Ціна: " + selectedProduct.price + " грн";
+
+    const description = document.createElement("p");
+    description.textContent = selectedProduct.description;
+
+    const addButton = document.createElement("button");
+    addButton.textContent = "Додати в корзину";
+    addButton.addEventListener("click", function () {
+        addToCart(selectedProduct.id);
+    });
+
+    info.appendChild(title);
+    info.appendChild(category);
+    info.appendChild(manufacturer);
+    info.appendChild(price);
+    info.appendChild(description);
+    info.appendChild(addButton);
+
+    wrapper.appendChild(image);
+    wrapper.appendChild(info);
+    details.appendChild(wrapper);
 }
 
 function renderCart() {
@@ -89,6 +168,13 @@ function renderCart() {
     }
 
     let total = 0;
+
+    const clearButton = document.createElement("button");
+    clearButton.textContent = "Очистити корзину";
+    clearButton.className = "clear-cart-btn";
+    clearButton.addEventListener("click", clearCart);
+
+    cartList.appendChild(clearButton);
 
     for (let i = 0; i < cart.length; i++) {
         const item = cart[i];

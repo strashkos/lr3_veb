@@ -34,22 +34,44 @@ h1 {
     margin-bottom: 20px;
 }
 
+.admin-subsection {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e2e2;
+}
+
+.inline-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0 20px;
+}
+
+.inline-form input {
+    flex: 1;
+    min-width: 220px;
+}
+
+.inline-form button {
+    min-width: 180px;
+}
+
 .hidden {
     display: none;
 }
 
-#loginSection input,
-#loginSection button,
-#productForm input,
-#productForm textarea,
-#productForm button {
+#loginSection input:not(.form-control),
+#loginSection button:not(.btn),
+#productForm input:not(.form-control),
+#productForm textarea:not(.form-control),
+#productForm button:not(.btn) {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-#loginSection button,
-#productForm button {
+#loginSection button:not(.btn),
+#productForm button:not(.btn) {
     background: #4a6fa5;
     color: white;
     border: none;
@@ -64,7 +86,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.admin-top button {
+.admin-top button:not(.btn) {
     background: #c0392b;
     color: white;
     border: none;
@@ -81,7 +103,13 @@ h1 {
     background: #fafafa;
 }
 
-.admin-card button {
+.admin-category-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.admin-card button:not(.btn) {
     margin-right: 10px;
     margin-top: 10px;
     padding: 8px 12px;

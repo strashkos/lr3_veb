@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f6;
+    color: #2c3e50;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #2980b9;
+}
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.grid-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.form-block input:not(.form-control),
+.form-block button:not(.btn) {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #d7dde5;
+}
+
+.form-block button:not(.btn),
+.logout-btn:not(.btn) {
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-block button:not(.btn):hover,
+.logout-btn:not(.btn):hover {
+    background: #3b5d8a;
+}
+
+.message {
+    margin-top: 10px;
+    min-height: 20px;
+    color: #c0392b;
+}
+
+.account-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.logout-btn {
+    padding: 10px 14px;
+    border-radius: 6px;
+}
+
+.user-order-card {
+    border: 1px solid #dde3eb;
+    background: #f9fbfd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.user-order-card h4 {
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 700px) {
+    .account-top {
+        flex-direction: column;
+    }
+}
